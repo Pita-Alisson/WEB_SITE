@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django.contrib.auth import get_user_model
 from django.db import models
 
+
 # Importa las clases y funciones necesarias para crear un usuario personalizado en Django
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 # Importa los signals para responder a eventos como la creación y actualización de instancias de modelos

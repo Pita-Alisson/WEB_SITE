@@ -1,0 +1,47 @@
+/* Estilos generales */
+:root {
+    --facebook-blue: #efa245;
+    --facebook-gray: #f3f5f0;
+  }
+body {
+    font-family: Arial, sans-serif; /* O la fuente utilizada por Facebook */
+    background-color: var(--facebook-gray);
+  }
+  
+  /* Estilos específicos para el grupo */
+  h1 {
+    color: var(--facebook-blue);
+    font-size: 24px;
+  }
+  
+  .btn {
+    background-color: var(--facebook-blue);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 4px;
+    visibility: visible; 
+  }
+  
+  /* Estilos para el modal (ajustar según Bootstrap)*/
+  .modal-content {
+    border-radius: 8px;
+  }
+  .container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+
+  .group-container {
+    max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente   
+ */
+}
+.group-info {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Agrega margen superior para separar del navbar */
+}

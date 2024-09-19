@@ -1,11 +1,80 @@
-/* *{
-    background-color: rgb(107, 242, 10);
-} */
-
-.mi-navbar {
-    background-color: #c97b14; /* Puedes reemplazar con cualquier color HEX, RGB o nombre de color */
-  }
-
-body{
-    background-color: aquamarine;
+/* Cambiar el color de fondo del navbar */
+/* General styles */
+body {
+    background-color: #f1eeea; /* Color de fondo claro */
+    font-family: 'Arial', sans-serif;
 }
+
+/* Estilo de la barra de navegación */
+.mi-navbar {
+    background-color: #e28743; 
+}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ddd; /* Color de los links */
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff; /* Cambio de color al pasar el ratón */
+}
+
+/* Botón de búsqueda */
+.boton {
+    margin-left: 10px;
+    padding: 5px 15px;
+}
+
+/* Estilo de los formularios */
+input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+}
+
+/* Mensajes de alerta */
+.alert {
+    border-radius: 5px;
+}
+
+/* Ajustes de diseño de la página */
+.container {
+    margin-top: 20px;
+}
+
+/* Mobile-first adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align:center;
+    }
+    
+.navbar-nav .nav-item {
+        margin-bottom:10px;
+    }
+ }
+ 
+
+.btn-like {
+    background-color:white;
+    color:black;
+    border:1px solid #ccc;
+    padding:10px 15px;
+    cursor:pointer;
+    transition:background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-like.liked {
+    background-color: red;
+    color: white;
+}
+
+.btn-like:hover {
+    background-color: #f0f0f0;
+}
+

@@ -2,11 +2,17 @@
 {% load static %}
 
 {% block content %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/crear-grupos.css' %}">
+<div class="group-container">
 <h1>Crear un nuevo grupo</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Crear Grupo</button>
+    <button type="submit" class="btn btn-primary" >Crear Grupo </button>
 </form>
 <a href="{% url 'grupos_usuario' %}" class="btn btn-secondary">Volver a la lista de grupos</a>
+</div>
+
+{% endblock %}
 {% endblock %}

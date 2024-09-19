@@ -19,6 +19,8 @@ from django.contrib.auth.decorators import login_required
 import logging
 # Importa los formularios personalizados para manejar el perfil de usuario
 from .forms import RegistroUsuarioForm, EditarPerfilForm, CrearGrupoForm, PublicacionGrupoForm
+#importo q
+from django.db.models import Q
 
 # Configuración del logger para depuración
 logger = logging.getLogger(__name__)
@@ -164,6 +166,7 @@ def lista_publicaciones(request):
     Muestra una lista de todas las publicaciones.
     """
     publicaciones = Publicacion.objects.all()  # Obtiene todas las publicaciones
+    
     return render(request, 'publicaciones/lista_publicaciones.html', {'publicaciones': publicaciones})
 
 @login_required
@@ -448,8 +451,23 @@ def detalle_grupo(request, grupo_id):
     
     return render(request, 'grupos/detalle_grupo.html', {'grupo': grupo, 'amigos': amigos})
 
-
-
+#################### vista buscar grupo #################33###########33
+###############################################################
+def buscar_grupo(request):
+    if 'buscar' in request.GET:
+        query = request.GET['buscar']
+        grupos = Grupo.objects.filter(nombre__icontains=query)
+        publicaciones = Publicacion.objects.filter(contenido__icontains=query)
+        resultados = list(grupos) + list(publicaciones)  # Combinar resultados
+        return render(request, 'grupos/lista_grupos.html', {'resultados': resultados})
+    else:
+        return render(request, 'grupos/lista_grupos.html', {})
+    
+def unirse_grupo(request, grupo_id):
+     grupo = Grupo.objects.get(id=grupo_id)
+     grupo.miembros.add(request.user)
+    
+     return redirect('lista_grupos')  # Redirige a la lista de grupos    
 
 # ##### CRUD ########
 # def lista_usuarios(request):

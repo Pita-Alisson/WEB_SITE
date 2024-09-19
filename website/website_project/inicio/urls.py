@@ -19,7 +19,8 @@ urlpatterns = [
     path('comentarios/<int:comentario_id>/editar/', views.editar_comentario, name='editar_comentario'),
     path('comentarios/<int:comentario_id>/eliminar/', views.eliminar_comentario, name='eliminar_comentario'),
     path('publicaciones/<int:publicacion_id>/comentar/', views.comentar_publicacion, name='comentar_publicacion'),
-    
+    path('unirse_grupo/<int:grupo_id>/', views.unirse_grupo, name='unirse_grupo'),
+
     # Esta es la URL para dar "like" a una publicación
     path('publicaciones/<int:publicacion_id>/', views.detalle_publicacion, name='detalle_publicacion'),
     path('publicaciones/<int:publicacion_id>/like/', views.like_publicacion, name='like_publicacion'),
@@ -37,6 +38,9 @@ urlpatterns = [
     path('grupos/crear/', views.crear_grupo, name='crear_grupo'),
     path('grupos/<int:grupo_id>/', views.detalle_grupo, name='detalle_grupo'),
     path('grupos/<int:grupo_id>/añadir_amigos/', views.detalle_grupo, name='añadir_amigos_a_grupo'),
+   # path( 'grupos/', views.buscar_grupo,name='buscar_grupo'),
+    path('grupos/buscar_grupo/', views.buscar_grupo, name='buscar_grupo'),
+    
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

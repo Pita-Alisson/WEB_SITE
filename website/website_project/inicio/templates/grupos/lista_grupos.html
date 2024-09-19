@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container mt-4">
+<h1>Resultados de la búsqueda</h1>
+{% if resultados %}
+    <ul class="list-group">
+        {% for resultado in resultados %}
+            {% if resultado.nombre %}
+              <li class="list-group-item">
+                <a href="{% url 'detalle_grupo' resultado.id %}">{{ resultado.nombre }}</a>
+              </li>
+            {% else %} 
+                {% if resultado.imagen %} 
+                    <li class="list-group-item">
+                    <img src="{{ resultado.imagen.url }}" alt="Imagen de la publicación" class="img-fluid">
+                    <p>{{ resultado.contenido }}</p>
+                    </li>
+                {% else%}
+                   <li class ="list-group-item" > 
+                   <p> {{resultado.contenido}}</p>
+                   </li>
+                {%endif%}    
+
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron resultados para tu búsqueda.</p>
+{% endif %}
+</div>
+{% endblock %}
